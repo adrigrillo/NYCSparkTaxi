@@ -1,0 +1,173 @@
+% Definiciones y constantes de estilo
+\include{definiciones}
+
+% Definiciones de comandos
+\newcommand{\nombreautor}{Adrián Rodríguez Grillo}
+\newcommand{\nombretutor}{Pablo Basanta Val}
+\newcommand{\nombretrabajo}{Diseño e implementación de una arquitectura Big-Data para el sistema de taxis de Nueva York}
+\newcommand{\fecha}{Junio del 2017}
+\newcommand{\grado}{Ingeniería Informática}
+% Descomentar si tu trabajo tiene un ponente
+%\newcommand{\nombreponente}{TODO: Nombre del ponente}
+% Descomentar si tu trabajo está asociado a un grupo de investigación
+% \newcommand{\grupoInvestigacion}{TODO: Grupo de investigación}
+\newcommand{\departamento}{Departamento de Telemática}
+\newcommand{\facultad}{Escuela Politécnica Superior}
+\newcommand{\universidad}{Universidad Carlos III de Madrid}
+\newcommand{\pieparizq}{}
+\newcommand{\pieparcen}{Trabajo de Fin de Grado}
+\newcommand{\logoizq}{logo}
+\newcommand{\correo}{adrirgrillo@gmail.com}
+
+% Glosario y acrónimos
+\makeglossaries
+\input{src/glosario}
+
+% Rerefencias
+\bibliography{src/bibliografia}
+
+% Inicio del documento
+\begin{document}
+
+% Elección del idioma (español)
+\selectlanguage{spanish}
+
+%
+% Portada
+%
+\pagenumbering{gobble}
+\include{portada}
+\hypersetup{pageanchor=true}
+
+% Estilo de párrafo de los capítulos
+\setlength{\parskip}{0.75em}
+\renewcommand{\baselinestretch}{1.25}
+% Interlineado simple
+\spacing{1}
+
+%
+% Agradecimientos
+%
+\pagenumbering{Roman}
+\setcounter{page}{0}
+%\include{src/agradecimientos}  
+
+%
+% Resumen
+%
+\include{src/resumen}
+
+%
+% Glosario
+%
+\printglossary[title=Glosario,toctitle=Glosario]
+\printglossary[title=Acrónimos,toctitle=Acrónimos,type=\acronymtype]
+
+% Estilo de párrafo de los índices
+\setlength{\parskip}{1pt}
+\renewcommand{\baselinestretch}{1}
+
+%
+% Tabla de contenidos
+%
+\tableofcontents
+\listoftables
+\listoffigures
+\cleardoublepage
+
+% Estilo de párrafo de los capítulos
+\setlength{\parskip}{0.75em}
+\renewcommand{\baselinestretch}{1.25}
+% Interlineado simple
+\spacing{1}
+% Numeración contenido
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%
+% Introducción
+%
+\include{src/introduccion}
+%
+% Estado del arte
+%
+\include{src/estadoDelArte}
+
+%
+% Marco regulador
+%
+\include{src/marcoRegulador}
+
+%
+% Diseño
+%
+\include{src/analysis}
+
+%
+% Diseño
+%
+\include{src/disenho}
+
+%
+% Implementacion
+%
+\include{src/implementacion}
+
+%
+% Uso del sistema
+%
+\include{src/usodelsistema}
+
+%
+% Resultados
+%
+\include{src/resultados}
+
+%
+% Conclusiones
+%
+\include{src/conclusiones} 
+
+%
+% Planificacion
+%
+\include{src/planificacion} 
+
+%
+% Presupuesto
+%
+\include{src/presupuesto} 
+
+%
+% Presupuesto
+%
+\include{src/ingles} 
+
+%
+% Página en blanco
+%
+\cleardoublepage
+
+%
+% Bibliografía
+%
+\printbibliography[heading=bibintoc]
+
+% No expandir elementos para llenar toda la página
+\raggedbottom
+
+%
+% Apéndices
+%
+\appendix
+\cleardoublepage
+\addappheadtotoc
+\appendixpage
+
+%
+% TODO: Apéndices del TFG
+%
+\include{src/apendiceEjemplos}
+
+% Fin del documento
+\end{document}

@@ -1,0 +1,27 @@
+\chapter{Conclusiones\label{sec:conclusiones}}
+
+\section{Conclusiones}
+El objetivo de este Trabajo de Fin de Grado era el diseño e implementación de una arquitectura \textit{big data} basada en \textit{Apache Spark} que permitiera al usuario la carga, almacenamiento, procesamiento, análisis y la obtención de resultados, sobre unas consultas establecidas, de datos. En esta ocasión, los datos eran el conjunto de todos los viajes de taxi que se realizaron en la ciudad de Nueva York en el año 2013.
+
+Lo que se pretendía con el diseño de la arquitectura es que esta fuese adaptable a las diferentes situaciones en las que se implementaría, también se buscaba que fuese escalable con facilidad y que fuese eficiente, es decir, que hubiese mejoría en los tiempos de procesamiento con las mejoras del sistema \textit{big data}.
+
+Tras la realización del diseño, la implementación y las pruebas de rendimiento sobre esta arquitectura se puede confirmar que se han logrado los objetivos propuestos. Contándose con un sistema \textit{big data} fácilmente adaptable a los diferentes entornos utilizados. También es un sistema escalable, resultando una tarea sencilla la modificación del número de nodos conectados al sistema, y eficiente, logrando resultados en tiempos aceptables para todas las configuraciones y que mejoran con la adición de nodos al mismo.
+
+Además, se ha logrado la implementación de las consultas que se establecieron como objetivo, consiguiendo que el sistema sea capaz de analizar los datos y obtener información útil de los mismos gracias al uso de \textit{Apache Spark}.
+
+Finalmente, la ejecución de las pruebas sobre la arquitectura nos ha permitido confirmar los resultados que se esperaban obtener con las diferentes configuraciones de nodos. Asimismo, estas pruebas nos han permitido conocer los límites y visualizarlos en el conjunto de gráficas, pudiendo conocer las tendencias de comportamiento de las diferentes configuraciones.
+
+\section{Futuras líneas de trabajo}
+Existen diversas posibilidades líneas de trabajo para desarrollar este proyecto en el futuro, algunas de estas son:
+
+\begin{itemize}
+\item Desarrollo de una herramienta de visualización gráfica de los datos obtenidos por las consultas. Esto llevaría al sistema a estado más cercano para la implementación y uso realista del mismo, al poder permitir a usuarios ajenos entender los datos de una forma sencilla.
+
+\item Creación de una interfaz para el sistema \textit{big data}, que permita la fácil manipulación de la misma, de una forma más amigable para el usuario. Esta línea estaría relacionada con la anterior siendo ambas necesarias para la implantación del sistema.
+
+\item Adaptación del sistema para la aceptación de los datos de otros años \cite{taxiTrips}, de ciudades diferentes, de medios de transporte similares como Uber o Cabify o de datos no relacionados con el transporte como condiciones meteorológicas o eventos en la ciudad. 
+
+\item Adaptación del sistema para la aceptación de datos en tiempo real y uso de algoritmos de inteligencia artificial para predecir los resultados de las consultas y mejorar el conocimiento del taxista.
+
+\item Implementación y despliegue del sistema en servicios en la nube como \gls{AWS} con ajustes de escalabilidad automática en base al uso del sistema.
+\end{itemize}

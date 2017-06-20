@@ -1,0 +1,174 @@
+% Clase del documento
+\documentclass[a4paper,12pt,oneside,openright,titlepage]{book}
+
+%
+% Paquetes necesarios
+%
+
+% Símbolo del euro
+\usepackage{eurosym}
+% Codificación UTF8
+\usepackage[utf8]{inputenc}
+% Caracteres del español
+\usepackage[spanish]{babel}
+% Código, algoritmos, etc.
+\usepackage{listings}
+% Definición de colores
+\usepackage{color}
+% Extensión del paquete color
+\usepackage[table,xcdraw]{xcolor}
+% Márgenes
+\usepackage{anysize}
+% Cabecera y pie de página
+\usepackage{fancyhdr}
+% Estilo título capítulos
+\usepackage{quotchap}
+% Algoritmos (expresarlos mejor)
+\usepackage{algorithmic}
+% Títulos de secciones
+\usepackage{titlesec}
+% Fórmulas matemáticas
+\usepackage[cmex10]{amsmath}
+% Enumeraciones
+\usepackage{enumerate}
+% Páginas en blanco
+\usepackage{emptypage}
+% Separación entre cajas
+\usepackage{float}
+% Imágenes
+\usepackage[pdftex]{graphicx}
+% Mejora de las tablas
+\usepackage{array}
+% Mejora de los símbolos matemáticos
+\usepackage{mdwmath}
+% Separar figuras en subfiguras
+\usepackage[caption=false,font=footnotesize]{subfig}
+% Incluir pdfs externos
+\usepackage{pdfpages}
+% Mejoras sobre las cajas
+\usepackage{fancybox}
+% Apéndices
+\usepackage{appendix}
+% Marcadores (para el pdf)
+\usepackage{bookmark}
+% Estilo de enumeraciones
+\usepackage{enumitem}
+% Espacio entre líneas y párrafos
+\usepackage{setspace}
+% Glosario/Acrónimos
+\usepackage[acronym]{glossaries}
+% Fuentes
+\usepackage[T1]{fontenc}
+% Bibliografía
+\usepackage[sorting=none,natbib=true,backend=bibtex,bibencoding=ascii]{biblatex}
+% Fix biblatex+babel warning
+\usepackage{csquotes}
+
+% Enlaces
+\hypersetup{hidelinks,pageanchor=true,colorlinks,citecolor=Fuchsia,urlcolor=black,linkcolor=Cerulean}
+
+% Euro (€)
+\DeclareUnicodeCharacter{20AC}{\euro}
+
+% Inclusión de gráficos
+\graphicspath{{./graphics/}}
+
+% Texto referencias
+\addto{\captionsspanish}{\renewcommand{\bibname}{Bibliografía}}
+
+% Extensiones de gráficos
+\DeclareGraphicsExtensions{.pdf,.jpeg,.jpg,.png}
+
+% Definiciones de colores (para hidelinks)
+\definecolor{LightCyan}{rgb}{0,0,0}
+\definecolor{Cerulean}{rgb}{0,0,0}
+\definecolor{Fuchsia}{rgb}{0,0,0}
+
+% Keywords (español e inglés)
+\def\keywordsEn{\vspace{.5em}
+{\textbf{\textit{Key words ---}}\,\relax%
+}}
+\def\endkeywordsEn{\par}
+
+\def\keywordsEs{\vspace{.5em}
+{\textbf{\textit{Palabras clave ---}}\,\relax%
+}}
+\def\endkeywordsEs{\par}
+
+
+% Abstract (español e inglés)
+\def\abstractEs{\vspace{.5em}
+{\textbf{\textit{Resumen ---}}\,\relax%
+}}
+\def\endabstractEs{\par}
+
+\def\abstractEn{\vspace{.5em}
+{\textbf{\textit{Abstract ---}}\,\relax%
+}}
+\def\endabstractEn{\par}
+
+% Estilo páginas de capítulos
+\fancypagestyle{plain}{
+\fancyhf{}
+\fancyfoot[CO]{\footnotesize\emph{\nombretrabajo}}
+\fancyfoot[RO]{\thepage}
+\renewcommand{\footrulewidth}{.6pt}
+\renewcommand{\headrulewidth}{0.0pt}
+}
+
+% Estilo resto de páginas
+\pagestyle{fancy}
+
+% Estilo páginas impares
+\fancyfoot[LO]{\footnotesize\emph{\nombretrabajo}}
+\fancyfoot[RO]{\thepage}
+\fancyfoot[CO]{\pieparizq}
+\rhead[]{\leftmark}
+
+% Estilo páginas pares
+\fancyfoot[RE]{\emph{\pieparcen}}
+\fancyfoot[LE]{\thepage}
+\fancyfoot[CE]{\pieparizq}
+\lhead[\leftmark]{}
+
+% Guía del pie de página
+\renewcommand{\footrulewidth}{.6pt}
+
+% Nombre de los bloques de código
+\renewcommand{\lstlistingname}{Código}
+
+% Estilo de los lstlistings
+\lstset{
+    frame=tb,
+    breaklines=true,
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{gray}\hookrightarrow\space}}
+}
+
+% Definiciones de funciones para los títulos
+\newlength\salto
+\setlength{\salto}{3.5ex plus 1ex minus .2ex}
+\newlength\resalto
+\setlength{\resalto}{2.3ex plus.2ex}
+
+% Estilo de los acrónimos
+\renewcommand{\acronymname}{Glosario}
+\renewcommand{\glossaryname}{Glosario}
+\pretolerance=2000
+\tolerance=3000
+
+% Texto índice de tablas
+\addto\captionsspanish{
+\def\tablename{Tabla}
+\def\listtablename{\'Indice de tablas}
+}
+
+% Traducir appendix/appendices
+\renewcommand\appendixtocname{Apéndices}
+\renewcommand\appendixpagename{Apéndices}
+
+% Comando code (lstlisting sin cambio de página)
+\lstnewenvironment{code}[1][]%
+  { \noindent\minipage{0.935\linewidth}\medskip
+    \vspace{5mm}
+    \lstset{basicstyle=\ttfamily\footnotesize,#1}}
+  {\endminipage}

@@ -1,0 +1,76 @@
+\chapter{Introducción \label{sec:intro}}
+
+A consecuencia del proceso de transformación digital que lleva produciéndose desde hace unos años de forma general en la sociedad y, especialmente, en el mundo empresarial, el tráfico y la generación de datos ha aumentado de forma muy abrupta, generándose millones de terabytes de nuevos datos al día \cite{BDStats}. 
+
+La procedencia de estos datos es muy variada, sin embargo, la irrupción en la vida cotidiana de los dispositivos conectados a la red ha sido la principal razón del crecimiento exponencial que se ha producido en estos últimos años. Concretamente, son el crecimiento en el número de smartphones \cite{phoneGrowth} y, más recientemente, la llegada del Internet de las cosas (IOT) y los wearable los principales responsables de este crecimiento en la cantidad de datos generados. 
+
+Este gran volumen de datos hace que la tarea del procesado de los mismos haya pasado a ser mucho más costosa. Además, el uso de diferentes fuentes de información hace que su estructura no sea homogénea, de forma que aumenta la complejidad del procesado. Esto es debido a la necesidad de su reestructuración para poder ser utilizados.
+
+Los cambios en la manera de obtener los datos han conllevado a que nuevas herramientas hayan sido necesarias para suplir las carencias e incapacidades que las tradicionales tenían para procesar los datos. El desarrollo de estas nuevas tecnologías ha supuesto un desafío para las empresas y organizaciones, que buscan obtener ventajas competitivas mediante el estudio de toda la información.
+
+Es decir, las organizaciones y empresas buscan, con el desarrollo de estos sistemas, obtener de los datos la información más valiosa posible para sus negocios y, así, lograr ventaja con respecto a sus competidores y poder trazar estrategias que aumenten los beneficios.
+
+Por otro lado, hay organizaciones y entes públicos que están utilizando estas herramientas de procesamiento y análisis para mejorar el funcionamiento de diversos sistemas. Especial importancia está tomando procesado en tiempo real que permiten mostrar la información de forma instantánea y predecir tendencias en cortos espacios de tiempo, por ejemplo, en los sistemas de transporte, permitiendo la toma de medidas para optimizar su funcionamiento. 
+
+Este proyecto de fin de grado toma como punto de partida el reto planteado en el concurso \gls{DEBS} 2015 Grand Challenge \cite{grandChallenge}, donde se cuentan con todos los viajes de taxi de la ciudad de Nueva York en el año 2013 y sobre los que se tendrán que hacer diversas consultas. El objetivo de esta competición era obtener el mejor tiempo de procesado y extracción de información de los datos disponibles, por lo que, debido al tamaño de los mismos, el uso de herramientas \textit{big data} es lo más recomendable.
+
+Lo que se buscan con las consultas es mejorar la información de la que disponen los taxistas de la ciudad, permitiendo entender los flujos de viajeros dependiendo de la situación temporal y, así, permitir establecer estrategias que les permitan aumentar sus beneficios. Las consultas a realizar sobre los datos son dos, la obtención de las rutas más frecuentes y de las zonas de la ciudad que más beneficios pueden aportar al taxista.
+
+En este documento se expondrán los diferentes diseños implementados para el sistema \textit{big data}, que será desarrollado con las tecnologías \textit{Apache Spark} \cite{spark}, presente en todas las implementaciones realizadas, y con \textit{Apache Hadoop} \cite{hadoop}, cuyo sistema distribuido de ficheros será utilizado en conjunción con el primero en algún diseño. Además, para el guardado de los datos procesados se utilizará \textit{Apache Parquet} \cite{parquet}.
+the
+Para obtener los resultados requeridos, el usuario deberá interactuar con el sistema \textit{big data}. Primero, tras obtener los datos de los viajes, estos tienen que ser cargados en el sistema, que serán procesados siguiendo los requerimientos del concurso y, posteriormente, se tendrán que realizar la consulta deseada para obtener los resultados.
+
+\section{Objetivos}
+
+El objetivo principal es el diseño de un sistema \textit{big data} escalable y eficiente que de respuesta a las consultas planteadas en el Grand Challenge del DEBS 2015. Para alcanzar el objetivo, el proyecto contará con las siguientes fases de trabajo:
+
+\begin{itemize}
+\item Análisis y estudio del panorama y de las herramientas \textit{big data} disponibles en la actualidad.
+
+\item Estudio del problema a solucionar, tanto de los datos aportados como de las cuestiones a resolver.
+
+\item Diseño del sistema \textit{big data} para las diferentes configuraciones que vamos a implementar.
+
+\item Implementación del sistema \textit{big data} diseñado para los diferentes entornos.
+
+\item Diseño e implementación de las clases y scripts de procesamiento y consulta sobre los datos.
+
+\item Ejecución de los scripts implementados y obtención de resultados.
+
+\item Análisis del rendimiento del sistema diseñado en los diferentes entornos y configuraciones implementadas.
+
+\item Obtención de las conclusiones y futuras líneas de trabajo del sistema implementado a través de los resultados obtenidos. 
+\end{itemize}
+
+\section{Estructura del documento}
+
+En este apartado se presentará la estructura que seguirá el documento con el fin de ofrecer una visión general del mismo y facilitar su lectura y seguimiento.
+
+\begin{enumerate}
+\item \textbf{Introducción:} Donde se presenta el contexto en el que se realiza el proyecto realizado, así como la motivación del mismo, los objetivos y la estructura del documento. Apartado \ref{sec:intro}.
+
+\item \textbf{Estado del arte:} Donde se analiza el contexto en el que se realiza el proyecto respecto a las tecnologías y herramientas utilizadas, en este caso el \textit{big data} y el open data. Apartado \ref{sec:estado_del_arte}.
+
+\item \textbf{Marco regulador:} Detalla las leyes y estándares que se aplican en los proyectos \textit{big data} en la realidad. Apartado \ref{sec:MarcoRegulador}.
+
+\item \textbf{Análisis:} Donde se establecen los requisitos que deberá cumplir el sistema para cumplir los objetivos establecidos. Apartado \ref{sec:analisis}.
+
+\item \textbf{Diseño:} En este apartado se describe el proceso de diseño del sistema y los diseños finalmente utilizados. Apartado \ref{sec:disenho}.
+
+\item \textbf{Implementación:} Se describe el proceso de implementación de los sistemas diseñados, describiendo los pasos necesarios y realizados para hacer funcionar al sistema. Apartado \ref{sec:implementación}.
+
+\item \textbf{Uso del sistema:} Donde se explica los comandos que hacen funcionar el sistema y se describen los scripts utilizados para realizar las pruebas. \ref{sec:usodelsistema}.
+
+\item \textbf{Pruebas y resultados:} Se exponen los resultados obtenidos por las diferentes configuraciones y se analizan, realizando comparaciones entre estos, llegando a unas conclusiones finales. Apartado \ref{sec:resultados}.
+
+\item \textbf{Conclusiones:} Se realiza una retrospectiva sobre el trabajo realizado y se esbozan unas posibles líneas de trabajo para este proyecto. Apartado \ref{sec:conclusiones}.
+
+\item \textbf{Planificación:} Detalle del plan de trabajo realizado, indicando las fases del mismo. Apartado \ref{sec:planificación}.
+
+\item \textbf{Impacto socioeconómico y presupuesto:} En este apartado, primero, se analiza el posible impacto económico del proyecto si se lanzase al mercado. Posteriormente, se detalla el presupuesto y coste del mismo. \ref{sec:presupuesto}.
+
+\item \textbf{Extended abstract:} Resumen del proyecto en inglés. Apartado \ref{sec:resumenIngles}.
+
+\item \textbf{Anexos:} Información extra sobre el proyecto.
+
+\end{enumerate}

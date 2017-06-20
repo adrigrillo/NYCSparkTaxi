@@ -1,0 +1,117 @@
+%
+% Portada
+%
+
+% Universidad, Facultad
+\begin{titlepage}
+\selectlanguage{spanish}
+\begin{center}
+\textbf{\begin{huge}
+\universidad \\
+\end{huge}}
+\bigskip 
+\begin{LARGE}
+\facultad \\
+\end{LARGE}
+\end{center}
+
+\bigskip
+\bigskip
+
+%
+% Imágenes (logos) izquierdo y derecho
+%
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.18]{\logoizq}
+	\end{center}	
+\end{figure}
+
+\bigskip
+\bigskip
+\bigskip
+
+% Grado
+\begin{center}
+\begin{large}
+\textbf{\grado}\\
+\end{large}
+\end{center}
+
+\bigskip
+
+\textbf{\begin{center}
+\begin{huge}
+\MakeUppercase{Trabajo de Fin de Grado}
+\end{huge}
+\end{center}}
+
+\bigskip
+\bigskip
+
+% Nombre del TFG
+\begin{center}
+\textbf{\begin{large}
+\MakeUppercase{\nombretrabajo}\\
+\end{large}}
+\end{center}
+
+% Nombre del autor
+\vspace{\fill}
+\begin{center}
+\textbf{\nombreautor}\\
+% Tutor
+\textbf{Tutor: \nombretutor}\\
+% Ponente, si está definido en main.tex
+\ifcsname nombreponente\endcsname
+\textbf{Ponente: \nombreponente}\\
+\fi
+
+\bigskip
+
+% Fecha
+\textbf{\fecha}\\
+\end{center}
+\end{titlepage}
+
+% Primera página
+\pagenumbering{Alph}
+\thispagestyle{empty}
+\par\vspace*{\fill}
+\begin{flushleft}
+\begin{scriptsize}
+\end{scriptsize}\end{flushleft}
+\newpage
+\thispagestyle{empty}
+\begin{center}
+
+% Nombre del trabajo
+\textbf{\begin{large}
+\MakeUppercase{\nombretrabajo}\\*
+\end{large}}
+\vspace*{0.2cm}
+\vspace{5cm}
+
+% Nombre del autor y del tutor
+\large Autor: \nombreautor \\*
+\large Tutor: \nombretutor \\*
+\ifcsname nombreponente\endcsname
+\large Ponente: \nombreponente\\
+\fi
+
+\vfill
+
+% Grupo de investigación, departamento, facultad, universidad y fecha
+\ifcsname grupoInvestigacion\endcsname
+\grupoInvestigacion \\
+\fi
+\departamento \\
+\facultad \\
+\universidad \\
+\vspace{1cm}
+\fecha \\
+
+\clearpage
+
+\end{center}
+\normalsize
