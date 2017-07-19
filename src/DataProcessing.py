@@ -88,7 +88,7 @@ def main(spark, fichero, nombre, tiempos):
     data.write.option("compression", "snappy") \
         .parquet("./../data/processed/" + nombre + "lab.parquet")
     fin = timeit.default_timer()
-    file = open("./../data/results/lab/" + tiempos + ".txt", "a")
+    file = open("./../data/results/" + tiempos + ".txt", "a")
     file.write(str(fin - inicio) + "\n")
     file.close()
 
