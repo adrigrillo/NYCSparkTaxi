@@ -172,7 +172,7 @@ def main(spark, fichero):
     profitable = profitable.take(10)
 
     fin = timeit.default_timer()
-    file = open("./../data/results/lab/standalone/" + "resultadosProfitableDay.txt", "a")
+    file = open("./../data/results/" + "resultadosProfitableDay.txt", "a")
     file.write(str(HORA_30) + ", " + str(HORA_FIN) + ", ")
     for i in range(len(profitable)):
         file.write(str(i) + ": ")
