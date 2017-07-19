@@ -94,7 +94,7 @@ def main(spark, fichero):
     final = frequent.take(10)
 
     fin = timeit.default_timer()
-    file = open("./../data/results/lab/standalone/" + "resultadosFrequentDay.txt", "a")
+    file = open("./../data/results/" + "resultadosFrequentDay.txt", "a")
     file.write(str(HORA_INICIO.time()) + ", " + str(HORA_FIN.time()) + ", ")
     for i in range(len(final)):
         file.write(str(i) + ": ")
