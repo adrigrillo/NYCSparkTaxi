@@ -37,7 +37,7 @@ def main(spark, fichero, fecha, hora):
         .count().orderBy("count", ascending=False)
     frequent = frequent.take(10)
     fin = timeit.default_timer()
-    file = open("./../data/results/lab/standalone/" + "resultadosFrequent.txt", "a")
+    file = open("./../data/results/" + "resultadosFrequent.txt", "a")
     file.write(str(tiempo_inicio) + ", " + str(tiempo_fin) + ", ")
     for i in range(len(frequent)):
         file.write(str(i) + ": ")
